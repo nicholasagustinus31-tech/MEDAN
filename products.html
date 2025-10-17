@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Produk MEDAN | Pintu &amp; Jendela uPVC</title>
+    <meta
+      name="description"
+      content="Jelajahi katalog produk uPVC MEDAN: swing door, sliding door, jungkit, lipat, dan pivot dengan spesifikasi teknis lengkap."
+    />
+    <link rel="canonical" href="https://www.example.com/products.html" />
+    <meta property="og:title" content="Produk MEDAN uPVC" />
+    <meta
+      property="og:description"
+      content="Solusi pintu dan jendela uPVC premium dengan spesifikasi teknis lengkap untuk setiap kebutuhan proyek."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.example.com/products.html" />
+    <meta property="og:image" content="https://www.example.com/images/og-products.jpg" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Product",
+              "name": "Profile Swing Door",
+              "url": "https://www.example.com/products.html#swing-door"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Product",
+              "name": "Profile Sliding Door",
+              "url": "https://www.example.com/products.html#sliding-door"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Product",
+              "name": "Profile Jungkit",
+              "url": "https://www.example.com/products.html#jungkit"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Product",
+              "name": "Profile Lipat",
+              "url": "https://www.example.com/products.html#lipat"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "Product",
+              "name": "Profile Pivot",
+              "url": "https://www.example.com/products.html#pivot"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <a href="index.html" class="brand" aria-label="MEDAN home">
+          <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true">
+            <rect width="36" height="36" rx="12" fill="#ff0000" />
+            <path
+              d="M10 24V12h3.8l3.2 5 3.2-5H24v12h-2.9v-7l-3.3 5.1h-.2L14.3 17v7H10z"
+              fill="#fff"
+            />
+          </svg>
+          MEDAN<span>.uPVC</span>
+        </a>
+        <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">&#9776;</button>
+        <nav id="primary-navigation" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="products.html" class="active">Products</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" style="padding-block: 5rem">
+        <div class="container" data-aos="fade-up">
+          <div class="badge">Katalog Produk</div>
+          <h1>Solusi uPVC untuk Setiap Bukaan</h1>
+          <p>
+            Koleksi pintu dan jendela uPVC kami dirancang untuk menghadirkan kenyamanan, keamanan, serta estetika yang
+            konsisten di setiap proyek.
+          </p>
+        </div>
+      </section>
+
+      <section class="container" id="product-tabs">
+        <div class="tab-controls" role="tablist">
+          <button
+            id="tab-swing-door"
+            class="active"
+            data-tab-target="swing-door"
+            role="tab"
+            aria-selected="true"
+            aria-controls="swing-door"
+          >
+            Swing Door
+          </button>
+          <button
+            id="tab-sliding-door"
+            data-tab-target="sliding-door"
+            role="tab"
+            aria-selected="false"
+            aria-controls="sliding-door"
+          >
+            Sliding Door
+          </button>
+          <button
+            id="tab-jungkit"
+            data-tab-target="jungkit"
+            role="tab"
+            aria-selected="false"
+            aria-controls="jungkit"
+          >
+            Jungkit
+          </button>
+          <button
+            id="tab-lipat"
+            data-tab-target="lipat"
+            role="tab"
+            aria-selected="false"
+            aria-controls="lipat"
+          >
+            Lipat
+          </button>
+          <button
+            id="tab-pivot"
+            data-tab-target="pivot"
+            role="tab"
+            aria-selected="false"
+            aria-controls="pivot"
+          >
+            Pivot
+          </button>
+        </div>
+
+        <div class="products-grid">
+          <article
+            class="product-card"
+            data-tab-content="swing-door"
+            id="swing-door"
+            role="tabpanel"
+            aria-labelledby="tab-swing-door"
+            aria-hidden="false"
+          >
+            <img src="images/product-swing-door.svg" alt="Profile Swing Door" loading="lazy" />
+            <h2>Profile Swing Door In / Out</h2>
+            <p class="muted">
+              Sistem bukaan engsel fleksibel dengan gasket ganda, cocok untuk pintu utama dan akses servis.
+            </p>
+            <ul>
+              <li>Ketebalan frame 70 mm dengan reinforcement baja galvanis.</li>
+              <li>Triple sealing system untuk isolasi suara dan udara.</li>
+              <li>Pilihan panel kaca low-E dan aksesori premium.</li>
+            </ul>
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ketebalan kaca</td>
+                    <td>6 - 12 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Dimensi maksimum</td>
+                    <td>1200 mm x 2400 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Warna</td>
+                    <td>White Glossy / Dark Oak / Grey Ash</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <a class="btn btn-outline" href="https://wa.me/6281234567890" target="_blank" rel="noopener"
+              >Request Quotation</a
+            >
+          </article>
+
+          <article
+            class="product-card"
+            data-tab-content="sliding-door"
+            id="sliding-door"
+            role="tabpanel"
+            aria-labelledby="tab-sliding-door"
+            aria-hidden="true"
+            hidden
+          >
+            <img src="images/product-sliding-door.svg" alt="Profile Sliding Door" loading="lazy" />
+            <h2>Profile Sliding Door</h2>
+            <p class="muted">Kombinasi desain minimalis dengan sistem track anti karat untuk bukaan lebar.</p>
+            <ul>
+              <li>Roller stainless steel tahan korosi dengan kapasitas 120 kg.</li>
+              <li>Multipoint locking system dengan key cylinder.</li>
+              <li>Integrasi insect screen dan panel kaca tempered.</li>
+            </ul>
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ketebalan kaca</td>
+                    <td>6 - 10 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Dimensi maksimum</td>
+                    <td>1800 mm x 2600 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Konfigurasi</td>
+                    <td>2 Panel / 3 Panel / 4 Panel</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <a class="btn btn-outline" href="https://wa.me/6281234567890" target="_blank" rel="noopener"
+              >Request Quotation</a
+            >
+          </article>
+
+          <article
+            class="product-card"
+            data-tab-content="jungkit"
+            id="jungkit"
+            role="tabpanel"
+            aria-labelledby="tab-jungkit"
+            aria-hidden="true"
+            hidden
+          >
+            <img src="images/product-jungkit.svg" alt="Profile Jungkit" loading="lazy" />
+            <h2>Profile Jungkit</h2>
+            <p class="muted">Mekanisme tilt-and-turn dua arah untuk sirkulasi udara dan keamanan optimal.</p>
+            <ul>
+              <li>Hardware import dengan opsi mode tilt atau swing.</li>
+              <li>Child safety handle dan micro-ventilation setting.</li>
+              <li>Weatherseal EPDM menjaga suhu ruangan.</li>
+            </ul>
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ketebalan kaca</td>
+                    <td>5 - 8 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Dimensi maksimum</td>
+                    <td>900 mm x 1600 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Ventilasi</td>
+                    <td>Tilt 15° / Turn 90°</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <a class="btn btn-outline" href="https://wa.me/6281234567890" target="_blank" rel="noopener"
+              >Request Quotation</a
+            >
+          </article>
+
+          <article
+            class="product-card"
+            data-tab-content="lipat"
+            id="lipat"
+            role="tabpanel"
+            aria-labelledby="tab-lipat"
+            aria-hidden="true"
+            hidden
+          >
+            <img src="images/product-lipat.svg" alt="Profile Lipat" loading="lazy" />
+            <h2>Profile Lipat</h2>
+            <p class="muted">Sistem folding door untuk bukaan maksimal dengan jalur track bawah dan atas.</p>
+            <ul>
+              <li>Konfigurasi hingga 6 panel dengan lipatan simetris.</li>
+              <li>Bottom track anti debu dan anti korosi.</li>
+              <li>Engsel heavy duty dan pengunci multi-point.</li>
+            </ul>
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ketebalan kaca</td>
+                    <td>6 - 10 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Dimensi maksimum</td>
+                    <td>700 mm x 2400 mm per panel</td>
+                  </tr>
+                  <tr>
+                    <td>Konfigurasi</td>
+                    <td>3 + 1 / 4 + 0 / 3 + 3</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <a class="btn btn-outline" href="https://wa.me/6281234567890" target="_blank" rel="noopener"
+              >Request Quotation</a
+            >
+          </article>
+
+          <article
+            class="product-card"
+            data-tab-content="pivot"
+            id="pivot"
+            role="tabpanel"
+            aria-labelledby="tab-pivot"
+            aria-hidden="true"
+            hidden
+          >
+            <img src="images/product-pivot.svg" alt="Profile Pivot" loading="lazy" />
+            <h2>Profile Pivot</h2>
+            <p class="muted">Desain premium dengan engsel pivot tersembunyi untuk pintu utama dan lobby.</p>
+            <ul>
+              <li>Pivot hinge 180° dengan mekanisme auto-closing.</li>
+              <li>Finishing premium woodgrain dan anodized.</li>
+              <li>Pilihan smart lock dan akses kontrol.</li>
+            </ul>
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ketebalan kaca</td>
+                    <td>10 - 12 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Dimensi maksimum</td>
+                    <td>1500 mm x 3000 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Fitur</td>
+                    <td>Soft closing, floor spring, anti slam</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <a class="btn btn-outline" href="https://wa.me/6281234567890" target="_blank" rel="noopener"
+              >Request Quotation</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <section class="container" id="cta-products">
+        <div class="section-header" data-aos="fade-up">
+          <span>Need Assistance?</span>
+          <h2>Konsultasi Produk dan Spesifikasi</h2>
+          <p>
+            Konsultan kami siap membantu menghitung kebutuhan material, menyesuaikan budget, dan memberikan sampel
+            produk.
+          </p>
+        </div>
+        <div class="hero-cta" style="justify-content: center" data-aos="zoom-in">
+          <a class="btn btn-primary" href="contact.html">Hubungi Tim Kami</a>
+          <a class="btn btn-outline" href="mailto:hello@medanupvc.com">Email Konsultan</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div>
+          <h3>MEDAN uPVC</h3>
+          <p>
+            Distributor material uPVC untuk pintu dan jendela dengan jaringan proyek nasional. Kami menghadirkan
+            kualitas premium dan layanan profesional.
+          </p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/medanupvc" aria-label="Facebook" target="_blank" rel="noopener">Fb</a>
+            <a href="https://www.instagram.com/medanupvc" aria-label="Instagram" target="_blank" rel="noopener"
+              >Ig</a
+            >
+            <a href="https://www.linkedin.com/company/medanupvc" aria-label="LinkedIn" target="_blank" rel="noopener"
+              >In</a
+            >
+          </div>
+        </div>
+        <div>
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>Jl. Sisingamangaraja No. 123, Medan</li>
+            <li>+62-812-3456-7890</li>
+            <li><a href="mailto:hello@medanupvc.com">hello@medanupvc.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Office Hours</h3>
+          <ul>
+            <li>Senin - Jumat: 09.00 - 18.00</li>
+            <li>Sabtu: 09.00 - 15.00</li>
+            <li>Minggu &amp; Libur: By Appointment</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>&copy; <span id="year"></span> MEDAN uPVC. All rights reserved.</small>
+      </div>
+    </footer>
+
+    <button type="button" class="scroll-top" aria-label="Scroll to top">&#8593;</button>
+    <div class="lightbox-overlay" role="dialog" aria-modal="true">
+      <button type="button" aria-label="Close gallery">&times;</button>
+      <img src="" alt="Gallery" />
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      (function () {
+        if (window.emailjs) {
+          emailjs.init('YOUR_PUBLIC_KEY');
+        }
+      })();
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

@@ -3,21 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kontak MEDAN | Konsultasi Pintu &amp; Jendela uPVC</title>
+    <title>Kontak Tangerang | Konsultasi Pintu &amp; Jendela uPVC</title>
     <meta
       name="description"
-      content="Hubungi MEDAN untuk konsultasi proyek pintu dan jendela uPVC. Formulir EmailJS, WhatsApp, dan lokasi kantor kami."
+      content="Hubungi Tangerang untuk konsultasi proyek pintu dan jendela uPVC. Formulir EmailJS, WhatsApp, dan lokasi kantor kami."
     />
     <link rel="canonical" href="https://www.example.com/contact.html" />
-    <meta property="og:title" content="Kontak MEDAN" />
+    <meta property="og:title" content="Kontak Tangerang" />
     <meta
       property="og:description"
-      content="Hubungi MEDAN untuk konsultasi proyek pintu dan jendela uPVC."
+      content="Hubungi Tangerang untuk konsultasi proyek pintu dan jendela uPVC."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.example.com/contact.html" />
     <meta property="og:image" content="https://www.example.com/images/og-contact.jpg" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="images/logo-retto.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,6 +25,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
@@ -39,7 +40,7 @@
       {
         "@context": "https://schema.org",
         "@type": "ContactPage",
-        "name": "Kontak MEDAN",
+        "name": "Kontak Tangerang",
         "url": "https://www.example.com/contact.html",
         "contactOption": [
           "TollFree",
@@ -57,15 +58,14 @@
   <body>
     <header>
       <div class="navbar">
-        <a href="index.html" class="brand" aria-label="MEDAN home">
-          <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true">
-            <rect width="36" height="36" rx="12" fill="#ff0000" />
-            <path
-              d="M10 24V12h3.8l3.2 5 3.2-5H24v12h-2.9v-7l-3.3 5.1h-.2L14.3 17v7H10z"
-              fill="#fff"
-            />
-          </svg>
-          MEDAN<span>.uPVC</span>
+        <a href="index.html" class="brand" aria-label="Tangerang home">
+          <img
+    src="images/logo-retto.svg"
+    alt="Logo Retto UPVC Tangerang"
+    width="160"
+    height="auto"
+    loading="lazy"
+  />
         </a>
         <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">&#9776;</button>
         <nav id="primary-navigation" aria-label="Main navigation">
@@ -79,16 +79,24 @@
     </header>
 
     <main>
-      <section class="hero" style="padding-block: 5rem">
-        <div class="container" data-aos="fade-up">
-          <div class="badge">Get in Touch</div>
-          <h1>Konsultasi Proyek uPVC Anda</h1>
-          <p>
-            Isi formulir di bawah atau hubungi kami melalui WhatsApp untuk mendapatkan penawaran dan survey lokasi lebih
-            lanjut.
-          </p>
+      <div class="swipe-hero">
+        <div class="hero-slider">
+          <img src="images/rumah-slide1.svg" alt="Contact Image 1" class="slide active">
+          <img src="images/rumah-slide2.svg" alt="Contact Image 2" class="slide">
+          <img src="images/rumah-slide3.svg" alt="Contact Image 3" class="slide">
         </div>
-      </section>
+      </div>
+      <section class="py-20">
+  <div class="container mx-auto text-center max-w-3xl" data-aos="fade-up">
+    <div class="badge">Get in Touch</div>
+    <h1>Konsultasi Proyek uPVC Anda</h1>
+    <p>
+      Isi formulir di bawah atau hubungi kami melalui WhatsApp untuk mendapatkan penawaran dan survey lokasi lebih
+      lanjut.
+    </p>
+  </div>
+</section>
+
 
       <section class="container contact-wrapper">
         <article class="contact-card" data-aos="fade-up">
@@ -114,27 +122,82 @@
             <input type="hidden" name="g-recaptcha-response" id="recaptcha-token" />
             <button class="btn btn-primary" type="submit">Kirim Pesan</button>
           </form>
-          <div class="social-links" aria-label="Additional contact options">
-            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="WhatsApp">Wa</a>
-            <a href="mailto:hello@medanupvc.com" aria-label="Email">Em</a>
-            <a href="tel:+6281234567890" aria-label="Phone">Ph</a>
-          </div>
+          <div class="social-links flex gap-4 text-xl" aria-label="Additional contact options">
+  <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="WhatsApp" class="text-green-500 hover:text-green-600 transition-colors duration-300">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="mailto:hello@Tangerangupvc.com" aria-label="Email" class="text-red-500 hover:text-red-600 transition-colors duration-300">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="tel:+6281234567890" aria-label="Phone" class="text-blue-500 hover:text-blue-600 transition-colors duration-300">
+    <i class="fas fa-phone"></i>
+  </a>
+</div>
+
         </article>
         <aside class="map-wrapper" data-aos="fade-left">
           <iframe
-            title="Lokasi Kantor MEDAN"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.5299733798762!2d98.6773363!3d3.5852424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f85a45940a9%3A0x56f44a6d7ba586c8!2sMedan!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
+            title="Lokasi Kantor Tangerang"
+            src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d3966.455907386515!2d106.6800700249902!3d-6.203432543784352!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-6.203409!2d106.6826366!4m5!1s0x2e69f9b1f208424f%3A0xca6e4a01787d1787!2sPT%20Phoeniks%20Sejahtera%20Mandiri%2C%20KAVLING%20DPR%20BLOK%20B%20No.148%2C%20Nerogtog%2C%20Pinang%2C%20Tangerang%20City%2C%20Banten%2015145!3m2!1d-6.2034636!2d106.6827014!5e0!3m2!1sid!2sid!4v1760946710304!5m2!1sid!2sid"
             loading="lazy"
             allowfullscreen=""
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
-          <div style="margin-top: 1.5rem">
-            <h3>Alamat Kantor</h3>
-            <p>Jl. Sisingamangaraja No. 123, Medan, Sumatera Utara</p>
-            <p class="muted">Buka Senin - Sabtu, 09.00 - 18.00</p>
-          </div>
+           <div class="mt-6">
+            
+    <article class="contact-card" data-aos="fade-up">
+  <h2 class="flex items-center gap-3 text-xl font-semibold">
+    <i class="fas fa-industry text-3xl" style="color: var(--primary-color);"></i>
+    Lokasi Pabrik
+  </h2>
+
+  <p class="muted mt-2 text-gray-600">
+    Informasi lokasi dan jam operasional pabrik kami.
+  </p>
+
+  <div class="mt-6 bg-gradient-to-br from-gray-50 to-white shadow-lg rounded-2xl p-6 border border-gray-100">
+    <div class="space-y-3 text-gray-700 text-base leading-relaxed">
+      <p class="flex items-center gap-3">
+        <i class="fas fa-map-marker-alt text-2xl" style="color: var(--primary-color);"></i>
+        <span>Serpong</span>
+      </p>
+      <p class="flex items-center gap-3">
+        <i class="fas fa-warehouse text-2xl" style="color: var(--primary-color);"></i>
+        <span>Gudang Laksana</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="space-y-4 text-gray-800 mt-6">
+    <div class="flex items-start gap-3">
+      <i class="fab fa-whatsapp text-2xl mt-1" style="color: var(--primary-color);"></i>
+      <div class="space-y-1">
+        <a href="https://wa.me/6281290677726" target="_blank" rel="noopener" class="hover:underline">(+62) 812-9067-7726</a><br>
+        <a href="https://wa.me/6281380662258" target="_blank" rel="noopener" class="hover:underline">(+62) 813-8066-2258</a>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <i class="fas fa-envelope text-2xl" style="color: var(--primary-color);"></i>
+      <a href="mailto:phoeniksejahtera@gmail.com" class="hover:underline">phoeniksejahtera@gmail.com</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <i class="fab fa-instagram text-2xl" style="color: var(--primary-color);"></i>
+      <a href="https://instagram.com/phoeniks.official" target="_blank" rel="noopener" class="hover:underline">@phoeniks.official</a>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Kontak Detail -->
+    
+  </div>
         </aside>
       </section>
+
+      
 
       <section class="container" id="faq">
         <div class="section-header" data-aos="fade-up">
@@ -151,7 +214,7 @@
           </article>
           <article class="card" data-aos="fade-up" data-aos-delay="100">
             <h4>Apakah tersedia survey lokasi?</h4>
-            <p class="muted">Ya, kami menyediakan survey gratis di area Medan dan biaya terjangkau untuk luar kota.</p>
+            <p class="muted">Ya, kami menyediakan survey gratis di area Tangerang dan biaya terjangkau untuk luar kota.</p>
           </article>
           <article class="card" data-aos="fade-up" data-aos-delay="150">
             <h4>Bisakah integrasi dengan smart home?</h4>
@@ -164,17 +227,17 @@
     <footer>
       <div class="container">
         <div>
-          <h3>MEDAN uPVC</h3>
+          <h3>Tangerang uPVC</h3>
           <p>
             Distributor material uPVC untuk pintu dan jendela dengan jaringan proyek nasional. Kami menghadirkan
             kualitas premium dan layanan profesional.
           </p>
           <div class="social-links">
-            <a href="https://www.facebook.com/medanupvc" aria-label="Facebook" target="_blank" rel="noopener">Fb</a>
-            <a href="https://www.instagram.com/medanupvc" aria-label="Instagram" target="_blank" rel="noopener"
+            <a href="https://www.facebook.com/Tangerangupvc" aria-label="Facebook" target="_blank" rel="noopener">Fb</a>
+            <a href="https://www.instagram.com/Tangerangupvc" aria-label="Instagram" target="_blank" rel="noopener"
               >Ig</a
             >
-            <a href="https://www.linkedin.com/company/medanupvc" aria-label="LinkedIn" target="_blank" rel="noopener"
+            <a href="https://www.linkedin.com/company/Tangerangupvc" aria-label="LinkedIn" target="_blank" rel="noopener"
               >In</a
             >
           </div>
@@ -191,9 +254,9 @@
         <div>
           <h3>Contact</h3>
           <ul>
-            <li>Jl. Sisingamangaraja No. 123, Medan</li>
+            <li>Jl. Sisingamangaraja No. 123, Tangerang</li>
             <li>+62-812-3456-7890</li>
-            <li><a href="mailto:hello@medanupvc.com">hello@medanupvc.com</a></li>
+            <li><a href="mailto:hello@Tangerangupvc.com">hello@Tangerangupvc.com</a></li>
           </ul>
         </div>
         <div>
@@ -206,11 +269,16 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <small>&copy; <span id="year"></span> MEDAN uPVC. All rights reserved.</small>
+        <small>&copy; <span id="year"></span> Tangerang uPVC. All rights reserved.</small>
       </div>
     </footer>
 
-    <button type="button" class="scroll-top" aria-label="Scroll to top">&#8593;</button>
+    <button class="scroll-top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 15l7-7 7 7"/>
+</svg>
+
+</button>
     <div class="lightbox-overlay" role="dialog" aria-modal="true">
       <button type="button" aria-label="Close gallery">&times;</button>
       <img src="" alt="Gallery" />

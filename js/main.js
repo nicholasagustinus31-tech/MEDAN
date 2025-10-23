@@ -63,29 +63,40 @@ window.addEventListener('load', () => {
   }
 });
 
+// Perbaikan implementasi tab products
 const tabButtons = document.querySelectorAll('[data-tab-target]');
 const tabPanels = document.querySelectorAll('[data-tab-content]');
 
 if (tabButtons.length && tabPanels.length) {
+  // Sembunyikan semua panel kecuali yang pertama
+  tabPanels.forEach((panel, index) => {
+    if (index !== 0) {
+      panel.setAttribute('hidden', '');
+      panel.setAttribute('aria-hidden', 'true');
+    }
+  });
+
   tabButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      const target = button.getAttribute('data-tab-target');
+      const targetId = button.getAttribute('data-tab-target');
 
+      // Nonaktifkan semua button
       tabButtons.forEach((btn) => {
         btn.classList.remove('active');
         btn.setAttribute('aria-selected', 'false');
       });
+
+      // Aktifkan button yang diklik
       button.classList.add('active');
       button.setAttribute('aria-selected', 'true');
 
+      // Sembunyikan semua panel produk
       tabPanels.forEach((panel) => {
-        if (panel.getAttribute('data-tab-content') === target) {
+        if (panel.id === targetId) {
           panel.removeAttribute('hidden');
-          panel.classList.add('active');
           panel.setAttribute('aria-hidden', 'false');
         } else {
-          panel.setAttribute('hidden', 'hidden');
-          panel.classList.remove('active');
+          panel.setAttribute('hidden', '');
           panel.setAttribute('aria-hidden', 'true');
         }
       });
@@ -114,42 +125,6 @@ if (filterButtons.length && projectItems.length) {
         item.style.display = shouldShow ? 'block' : 'none';
       });
     });
-  });
-}
-
-const lightboxOverlay = document.querySelector('.lightbox-overlay');
-const lightboxImage = document.querySelector('.lightbox-overlay img');
-const lightboxClose = document.querySelector('.lightbox-overlay button');
-
-const galleryTriggers = document.querySelectorAll('[data-lightbox]');
-
-if (lightboxOverlay && lightboxImage && galleryTriggers.length) {
-  galleryTriggers.forEach((trigger) => {
-    trigger.addEventListener('click', (event) => {
-      event.preventDefault();
-      const src = trigger.getAttribute('href') || trigger.dataset.lightbox;
-      lightboxOverlay.classList.add('active');
-      lightboxImage.setAttribute('src', src);
-      lightboxImage.setAttribute('alt', trigger.getAttribute('data-title') || 'Gallery image');
-      body.style.overflow = 'hidden';
-    });
-  });
-
-  const closeLightbox = () => {
-    lightboxOverlay.classList.remove('active');
-    body.style.overflow = '';
-  };
-
-  lightboxClose?.addEventListener('click', closeLightbox);
-  lightboxOverlay.addEventListener('click', (event) => {
-    if (event.target === lightboxOverlay) {
-      closeLightbox();
-    }
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && lightboxOverlay.classList.contains('active')) {
-      closeLightbox();
-    }
   });
 }
 
@@ -183,3 +158,167 @@ if (contactForm) {
     }
   });
 }
+
+// Hapus implementasi lightbox lama
+const lightboxOverlay = document.querySelector('.lightbox-overlay');
+const lightboxImage = document.querySelector('.lightbox-overlay img');
+const lightboxClose = document.querySelector('.lightbox-overlay button');
+const galleryTriggers = document.querySelectorAll('[data-lightbox]');
+
+if (lightboxOverlay && lightboxImage && galleryTriggers.length) {
+  galleryTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      const src = trigger.getAttribute('href') || trigger.dataset.lightbox;
+      lightboxOverlay.classList.add('active');
+      lightboxImage.setAttribute('src', src);
+      lightboxImage.setAttribute('alt', trigger.getAttribute('data-title') || 'Gallery image');
+      body.style.overflow = 'hidden';
+    });
+  });
+
+  const closeLightbox = () => {
+    lightboxOverlay.classList.remove('active');
+    body.style.overflow = '';
+  };
+
+  lightboxClose?.addEventListener('click', closeLightbox);
+  lightboxOverlay.addEventListener('click', (event) => {
+    if (event.target === lightboxOverlay) {
+      closeLightbox();
+    }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightboxOverlay.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+}
+
+// Implementasi lightbox baru
+(function() {
+  const overlay = document.querySelector('.lightbox-overlay');
+  if (!overlay) return;
+
+  const img = overlay.querySelector('.lb-img');
+  const caption = overlay.querySelector('.lb-caption');
+  const btnClose = overlay.querySelector('.lb-close');
+  const btnPrev = overlay.querySelector('.lb-prev');
+  const btnNext = overlay.querySelector('.lb-next');
+
+  let currentGallery = [];
+  let currentTitles = [];
+  let currentIndex = 0;
+
+  function showImage(index) {
+    img.src = currentGallery[index];
+    caption.textContent = currentTitles[index] || '';
+    btnPrev.style.display = currentGallery.length > 1 ? '' : 'none';
+    btnNext.style.display = currentGallery.length > 1 ? '' : 'none';
+  }
+
+  // Event listener untuk gallery triggers
+  document.querySelectorAll('.gallery-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      try {
+        currentGallery = JSON.parse(trigger.dataset.images);
+        currentTitles = trigger.dataset.titles ? JSON.parse(trigger.dataset.titles) : [];
+        currentIndex = 0;
+        
+        showImage(currentIndex);
+        overlay.classList.add('open');
+        overlay.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+      } catch (err) {
+        console.error('Failed to parse gallery data:', err);
+      }
+    });
+  });
+
+  // Navigation controls
+  btnNext?.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    showImage(currentIndex);
+  });
+
+  btnPrev?.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    showImage(currentIndex);
+  });
+
+  function closeGallery() {
+    overlay.classList.remove('open');
+    overlay.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+  }
+
+  btnClose?.addEventListener('click', closeGallery);
+
+  // Close on outside click
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeGallery();
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!overlay.classList.contains('open')) return;
+    if (e.key === 'Escape') closeGallery();
+    if (e.key === 'ArrowRight') btnNext?.click();
+    if (e.key === 'ArrowLeft') btnPrev?.click();
+  });
+})();
+
+function initHeroSlider() {
+  const slides = document.querySelectorAll('.hero-slider .slide');
+  if (!slides.length) return;
+
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  setInterval(nextSlide, 3000);
+}
+
+document.addEventListener('DOMContentLoaded', initHeroSlider);
+
+  // Nomor WhatsApp tujuan (gunakan format internasional tanpa +)
+  const whatsappNumber = "6281290677726";
+
+  document.getElementById("contact-form").addEventListener("submit", function (event) {
+    event.preventDefault(); // mencegah reload halaman
+
+    // Ambil data dari form
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Format pesan ke WhatsApp
+    const whatsappMessage = 
+      `Halo Tangerang uPVC,%0A%0A` +
+      `Nama: ${name}%0A` +
+      `Email: ${email}%0A` +
+      `Telepon: ${phone}%0A` +
+      `Pesan:%0A${message}%0A%0A` +
+      `Dikirim via Form Website`;
+
+    // Buat URL WhatsApp
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+    // ✅ Tambahkan alert sebelum membuka WA
+    alert("Mengalihkan ke WhatsApp...");
+
+    // Buka WhatsApp di tab baru
+    window.open(whatsappURL, "_blank");
+  });

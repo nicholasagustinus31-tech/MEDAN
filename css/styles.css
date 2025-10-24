@@ -1197,3 +1197,238 @@ footer a:hover {
   min-height: 420px;
   box-shadow: 0 25px 40px rgba(15, 23, 42, 0.1);
 }
+
+/* ===== FAQ ===== */
+.faq-list {
+  max-width: 920px;
+  margin-inline: auto;
+}
+
+.faq {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 16px;
+  padding: 0;                 /* padding di summary & content */
+  margin-bottom: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.03);
+  overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.faq:hover {
+  border-color: #f3f4f6;
+  box-shadow: 0 6px 20px rgba(0,0,0,.05);
+}
+
+.faq__summary {
+  list-style: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #111827;
+  outline: none;
+}
+
+.faq__summary::-webkit-details-marker { display: none; }
+
+.faq__icon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #fff2f2;       /* subtle brand tint */
+  color: #ff0000;            /* RETTO red */
+}
+
+.faq__chevron {
+  transition: transform .25s ease;
+}
+
+details[open] .faq__chevron {
+  transform: rotate(180deg);
+}
+
+.faq__question {
+  line-height: 1.4;
+}
+
+.faq__content {
+  padding: 0 20px 18px 60px;  /* indent sejajar dengan grid summary */
+  color: #4b5563;
+  font-size: .975rem;
+  line-height: 1.7;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height .35s ease, opacity .25s ease;
+}
+
+details[open] .faq__content {
+  max-height: 600px;          /* cukup untuk teks 2–3 paragraf */
+  opacity: 1;
+}
+
+.faq:focus-within {
+  border-color: #ff0000;
+  box-shadow: 0 0 0 3px rgba(255,0,0,.15);
+}
+
+.faq__cta {
+  margin-top: 22px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.highlight {
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.highlight:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.highlight__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  background: none;
+  box-shadow: none;
+  overflow: visible;         
+  width: auto;            
+  height: auto;
+}
+
+.highlight__icon img {
+  max-width: auto;           
+  height: auto;              
+  object-fit: contain;
+  display: block;
+  transform: scale(1);
+  transition: transform 0.25s ease;
+}
+
+.highlight:hover .highlight__icon img {
+  transform: scale(1.1);      
+}
+
+
+
+.highlight h3 {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.highlight p {
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 0.975rem;
+}
+
+/* Grid 6 keunggulan responsif */
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.highlight {
+  background: #fff;
+  border: 1px solid #f0f2f5;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.04);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.highlight:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+
+.highlight__icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #fff2f2;      /* nuansa brand merah RETTO */
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(255,0,0,.10);
+}
+
+.highlight__icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.highlight h3 {
+  font-size: 1.06rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 6px 0 8px;
+}
+
+.highlight p {
+  color: #4b5563;
+  line-height: 1.65;
+  font-size: .965rem;
+}
+
+/* Desktop default (silakan sesuaikan jumlah kolom) */
+.products-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Tablet: 2 kolom */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile: 1 kolom PASTI */
+@media (max-width: 640px) {
+  .products-grid {
+    grid-template-columns: 1fr !important; /* paksa override auto-fit/minmax lama */
+  }
+  .product-card {
+    width: 100%;
+    padding: 1.25rem;
+  }
+  .product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+}
+
+

@@ -322,3 +322,21 @@ document.addEventListener('DOMContentLoaded', initHeroSlider);
     // Buka WhatsApp di tab baru
     window.open(whatsappURL, "_blank");
   });
+
+  // Accordion single-open + ARIA sync
+(function () {
+  const faqs = document.querySelectorAll('.faq');
+  faqs.forEach(d => {
+    const summary = d.querySelector('.faq__summary');
+    d.addEventListener('toggle', () => {
+      const expanded = d.open;
+      if (summary) summary.setAttribute('aria-expanded', String(expanded));
+      if (expanded) {
+        // tutup yang lain
+        faqs.forEach(other => {
+          if (other !== d && other.open) other.open = false;
+        });
+      }
+    });
+  });
+})();

@@ -1432,3 +1432,7 @@ details[open] .faq__content {
 }
 
 
+
+.gallery-grid figcaption h3 {
+  color: #fff; /* warna putih */
+}
